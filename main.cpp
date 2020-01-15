@@ -112,7 +112,7 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-    return lhs / rhs;
+    return lhs / rhs; FIXME handle divide by 0.  integer division by 0 crashes programs.
 }
  
  
@@ -124,6 +124,9 @@ int main()
     FloatType ft;
     DoubleType dt;
     IntType it;
+
+	//uncomment to see crash
+	//it.divide(1, 0);
     
     auto result1 = ft.add(500.3f, 42.9f);
     auto result2 = dt.multiply(500.3, 42.9);
