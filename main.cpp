@@ -31,9 +31,107 @@
 
  Wait for my code review.
  */
+/*
+UDT1
+*/
+ struct FloatType 
+ {
+     float add(float lhs, float rhs );
+     float subtract(float lhs, float rhs );
+     float multiply(float lhs, float rhs );
+     float divide(float lhs, float rhs );
+ };
+ 
+ float FloatType::add(float lhs, float rhs )
+ {   
+     return lhs + rhs;
+ }
+ float FloatType::subtract(float lhs, float rhs )
+ {     
+     return lhs - rhs;
+ }
+ float FloatType::multiply(float lhs, float rhs )
+ {
+     return lhs * rhs;
+ }
+ float FloatType::divide(float lhs, float rhs )
+ {     
+     return lhs / rhs;
+ }
+ 
+ /*
+UDT2
+*/
+ struct DoubleType
+ {  
+     double add(double lhs, double rhs );
+     double subtract(double lhs, double rhs );
+     double multiply(double lhs, double rhs );
+     double divide(double lhs, double rhs );
+ };
+ 
+ double DoubleType::add(double lhs, double rhs )
+ {
+     return lhs + rhs;
+ }
+ double DoubleType::subtract(double lhs, double rhs )
+ {
+     return lhs - rhs;
+ }
+ double DoubleType::multiply(double lhs, double rhs )
+ {
+     return lhs * rhs;
+ }
+ double DoubleType::divide(double lhs, double rhs )
+ {
+     return lhs / rhs;
+ }
+ 
+ /*
+UDT3
+*/
+ struct IntType
+ {
+     int add(int lhs, int rhs );
+     int subtract(int lhs, int rhs );
+     int multiply(int lhs, int rhs );
+     int divide(int lhs, int rhs );
+ };
+ 
+ int IntType::add(int lhs, int rhs )
+ {
+     return lhs + rhs;
+ }
+ int IntType::subtract(int lhs, int rhs )
+ {
+     return lhs - rhs;
+ }
+ int IntType::multiply(int lhs, int rhs )
+ {
+     return lhs * rhs;
+ }
+ int IntType::divide(int lhs, int rhs )
+ {
+     return lhs / rhs;
+ }
+ 
+ 
+ 
 
 #include <iostream>
 int main()
 {
+    FloatType ft;
+    DoubleType dt;
+    IntType it;
+    
+    auto result1 = ft.add(500.3f, 42.9f);
+    auto result2 = dt.multiply(500.3, 42.9);
+    auto result3 = it.divide(500, 42);
+    
+    std::cout << "result of ft.add(): " << result1 << std::endl;
+    std::cout << "result of dt.multiply(): " << result2 << std::endl;
+    std::cout << "result of it.divide(): " << result3 << std::endl;    
+    
     std::cout << "good to go!" << std::endl;
 }
