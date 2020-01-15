@@ -34,86 +34,86 @@
 /*
 UDT1
 */
- struct FloatType 
- {
-     float add(float lhs, float rhs );
-     float subtract(float lhs, float rhs );
-     float multiply(float lhs, float rhs );
-     float divide(float lhs, float rhs );
- };
+struct FloatType 
+{
+    float add(float lhs, float rhs );
+    float subtract(float lhs, float rhs );
+    float multiply(float lhs, float rhs );
+    float divide(float lhs, float rhs );
+};
  
- float FloatType::add(float lhs, float rhs )
- {   
-     return lhs + rhs;
- }
- float FloatType::subtract(float lhs, float rhs )
- {     
-     return lhs - rhs;
- }
- float FloatType::multiply(float lhs, float rhs )
- {
-     return lhs * rhs;
- }
- float FloatType::divide(float lhs, float rhs )
- {     
-     return lhs / rhs;
- }
+float FloatType::add(float lhs, float rhs )
+{   
+    return lhs + rhs;
+}
+float FloatType::subtract(float lhs, float rhs )
+{     
+    return lhs - rhs;
+}
+float FloatType::multiply(float lhs, float rhs )
+{
+    return lhs * rhs;
+}
+float FloatType::divide(float lhs, float rhs )
+{     
+    return lhs / rhs;
+}
  
  /*
 UDT2
 */
- struct DoubleType
- {  
-     double add(double lhs, double rhs );
-     double subtract(double lhs, double rhs );
-     double multiply(double lhs, double rhs );
-     double divide(double lhs, double rhs );
- };
+struct DoubleType
+{  
+    double add(double lhs, double rhs );
+    double subtract(double lhs, double rhs );
+    double multiply(double lhs, double rhs );
+    double divide(double lhs, double rhs );
+};
  
- double DoubleType::add(double lhs, double rhs )
- {
-     return lhs + rhs;
- }
- double DoubleType::subtract(double lhs, double rhs )
- {
-     return lhs - rhs;
- }
- double DoubleType::multiply(double lhs, double rhs )
- {
-     return lhs * rhs;
- }
- double DoubleType::divide(double lhs, double rhs )
- {
-     return lhs / rhs;
- }
+double DoubleType::add(double lhs, double rhs )
+{
+    return lhs + rhs;
+}
+double DoubleType::subtract(double lhs, double rhs )
+{
+    return lhs - rhs;
+}
+double DoubleType::multiply(double lhs, double rhs )
+{
+    return lhs * rhs;
+}
+double DoubleType::divide(double lhs, double rhs )
+{
+    return lhs / rhs;
+}
  
  /*
 UDT3
 */
- struct IntType
- {
-     int add(int lhs, int rhs );
-     int subtract(int lhs, int rhs );
-     int multiply(int lhs, int rhs );
-     int divide(int lhs, int rhs );
- };
+struct IntType
+{
+    int add(int lhs, int rhs );
+    int subtract(int lhs, int rhs );
+    int multiply(int lhs, int rhs );
+    int divide(int lhs, int rhs );
+};
  
- int IntType::add(int lhs, int rhs )
- {
-     return lhs + rhs;
- }
- int IntType::subtract(int lhs, int rhs )
- {
-     return lhs - rhs;
- }
- int IntType::multiply(int lhs, int rhs )
- {
-     return lhs * rhs;
- }
- int IntType::divide(int lhs, int rhs )
- {
-     return lhs / rhs;
- }
+int IntType::add(int lhs, int rhs )
+{
+    return lhs + rhs;
+}
+int IntType::subtract(int lhs, int rhs )
+{
+    return lhs - rhs;
+}
+int IntType::multiply(int lhs, int rhs )
+{
+    return lhs * rhs;
+}
+int IntType::divide(int lhs, int rhs )
+{
+    return lhs / rhs;
+}
  
  
  
