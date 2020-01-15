@@ -31,6 +31,10 @@
 
  Wait for my code review.
  */
+
+#include <string>
+#include <iostream>
+
 /*
 UDT1
 */
@@ -55,7 +59,11 @@ float FloatType::multiply(float lhs, float rhs )
     return lhs * rhs;
 }
 float FloatType::divide(float lhs, float rhs )
-{     
+{   
+    if(rhs == 0.0f)
+    {
+        std::cout << "You attempted to divide by 0.0f" << std::endl;
+    }
     return lhs / rhs;
 }
  
@@ -84,6 +92,10 @@ double DoubleType::multiply(double lhs, double rhs )
 }
 double DoubleType::divide(double lhs, double rhs )
 {
+    if(rhs == 0.0)
+    {
+        std::cout << "You attempted to divide by 0.0" << std::endl;
+    }
     return lhs / rhs;
 }
  
@@ -112,29 +124,31 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-    return lhs / rhs; FIXME handle divide by 0.  integer division by 0 crashes programs.
+    if(rhs == 0)
+    {
+        std::cout << "You attempted to divide by 0 " << std::endl;
+    }
+    return lhs / rhs;
 }
  
  
  
 
-#include <iostream>
+
 int main()
 {
-    FloatType ft;
-    DoubleType dt;
-    IntType it;
-
-	//uncomment to see crash
-	//it.divide(1, 0);
-    
-    auto result1 = ft.add(500.3f, 42.9f);
-    auto result2 = dt.multiply(500.3, 42.9);
-    auto result3 = it.divide(500, 42);
-    
-    std::cout << "result of ft.add(): " << result1 << std::endl;
-    std::cout << "result of dt.multiply(): " << result2 << std::endl;
-    std::cout << "result of it.divide(): " << result3 << std::endl;    
-    
     std::cout << "good to go!" << std::endl;
+
+    FloatType ft;
+    auto result1 = ft.add(500.3f, 42.9f);
+    std::cout << "result of ft.add(): " << result1 << std::endl;
+
+
+    DoubleType dt;
+    auto result2 = dt.multiply(500.3, 42.9);
+    std::cout << "result of dt.multiply(): " << result2 << std::endl;
+
+    IntType it;
+    auto result3 = it.divide(500, 42);  
+    std::cout << "result of it.divide(): " << result3 << std::endl;    
 }
