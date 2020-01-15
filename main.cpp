@@ -127,6 +127,7 @@ int IntType::divide(int lhs, int rhs )
     if(rhs == 0)
     {
         std::cout << "You attempted to divide by 0 " << std::endl;
+		//FIXME prevent division by zero.  return something so line 132 isn't executed.
     }
     return lhs / rhs;
 }
@@ -151,4 +152,5 @@ int main()
     IntType it;
     auto result3 = it.divide(500, 42);  
     std::cout << "result of it.divide(): " << result3 << std::endl;    
+	it.divide(1,0);
 }
