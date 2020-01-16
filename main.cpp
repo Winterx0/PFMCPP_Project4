@@ -33,6 +33,7 @@
  */
 
 #include <string>
+#include <exception>
 #include <iostream>
 
 /*
@@ -58,13 +59,20 @@ float FloatType::multiply(float lhs, float rhs )
 {
     return lhs * rhs;
 }
-float FloatType::divide(float lhs, float rhs )
+float FloatType::divide(float lhs, float rhs)
 {   
-    if(rhs == 0.0f)
+    try
     {
-        std::cout << "You attempted to divide by 0.0f" << std::endl;
+        if(rhs == 0.0f)
+        {
+            throw "error";   
+        }
     }
-    return lhs / rhs;
+    catch(const char *fix)
+            {
+                std::cout << "exception" << std::endl << *fix;
+            }
+    return 1; 
 }
  
  /*
@@ -90,13 +98,20 @@ double DoubleType::multiply(double lhs, double rhs )
 {
     return lhs * rhs;
 }
-double DoubleType::divide(double lhs, double rhs )
+double DoubleType::divide(double lhs, double rhs)
 {
-    if(rhs == 0.0)
+    try
     {
-        std::cout << "You attempted to divide by 0.0" << std::endl;
+        if(rhs == 0.0)
+        {
+            throw "error";
+        }
     }
-    return lhs / rhs;
+    catch(const char *fix)
+            {
+                std::cout << "exception" << std::endl << *fix;
+            }
+    return 1; 
 }
  
  /*
@@ -124,12 +139,18 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-    if(rhs == 0)
+    try
     {
-        std::cout << "You attempted to divide by 0 " << std::endl;
-		//FIXME prevent division by zero.  return something so line 132 isn't executed.
+        if(rhs == 0)
+        {
+            throw "error";
+        }
     }
-    return lhs / rhs;
+    catch(const char *fix)
+            {
+                std::cout << "exception" << std::endl << *fix;
+            }
+    return 1;  
 }
  
  
@@ -152,5 +173,5 @@ int main()
     IntType it;
     auto result3 = it.divide(500, 42);  
     std::cout << "result of it.divide(): " << result3 << std::endl;    
-	it.divide(1,0);
+	it.divide(1,2);
 }
