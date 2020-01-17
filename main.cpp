@@ -32,8 +32,127 @@
  Wait for my code review.
  */
 
+#include <string>
 #include <iostream>
+
+/*
+UDT1
+*/
+struct FloatType 
+{
+    float add(float lhs, float rhs );
+    float subtract(float lhs, float rhs );
+    float multiply(float lhs, float rhs );
+    float divide(float lhs, float rhs );
+};
+ 
+float FloatType::add(float lhs, float rhs )
+{   
+    return lhs + rhs;
+}
+float FloatType::subtract(float lhs, float rhs )
+{     
+    return lhs - rhs;
+}
+float FloatType::multiply(float lhs, float rhs )
+{
+    return lhs * rhs;
+}
+float FloatType::divide(float lhs, float rhs)
+{   
+    if(rhs == 0.f)
+    {
+        std::cout << "warning: dividing float by 0.f" << std::endl;
+    }
+
+    return lhs / rhs;
+}
+ 
+ /*
+UDT2
+*/
+struct DoubleType
+{  
+    double add(double lhs, double rhs );
+    double subtract(double lhs, double rhs );
+    double multiply(double lhs, double rhs );
+    double divide(double lhs, double rhs );
+};
+ 
+double DoubleType::add(double lhs, double rhs )
+{
+    return lhs + rhs;
+}
+double DoubleType::subtract(double lhs, double rhs )
+{
+    return lhs - rhs;
+}
+double DoubleType::multiply(double lhs, double rhs )
+{
+    return lhs * rhs;
+}
+double DoubleType::divide(double lhs, double rhs)
+{
+    if(rhs == 0.0)
+    {
+        std::cout << "warning: dividing double by 0.0" << std::endl;
+    }
+
+    return lhs / rhs;
+}
+ 
+ /*
+UDT3
+*/
+struct IntType
+{
+    int add(int lhs, int rhs );
+    int subtract(int lhs, int rhs );
+    int multiply(int lhs, int rhs );
+    int divide(int lhs, int rhs );
+};
+ 
+int IntType::add(int lhs, int rhs )
+{
+    return lhs + rhs;
+}
+int IntType::subtract(int lhs, int rhs )
+{
+    return lhs - rhs;
+}
+int IntType::multiply(int lhs, int rhs )
+{
+    return lhs * rhs;
+}
+int IntType::divide(int lhs, int rhs )
+{
+   	if(rhs == 0)
+   	{
+      	std::cout << "You tried to divide by 0 " << std::endl;
+      	return 0;
+   	}
+   
+   	return lhs / rhs;
+}
+ 
+
+
+
 int main()
 {
     std::cout << "good to go!" << std::endl;
+
+    FloatType ft;
+    auto result1 = ft.add(500.3f, 42.9f);
+    std::cout << "result of ft.add(): " << result1 << std::endl;
+
+
+    DoubleType dt;
+    auto result2 = dt.multiply(500.3, 42.9);
+    std::cout << "result of dt.multiply(): " << result2 << std::endl;
+
+    IntType it;
+    auto result3 = it.divide(500, 42);  
+    std::cout << "result of it.divide(): " << result3 << std::endl;    
+	it.divide(1,6);
 }
