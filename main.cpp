@@ -62,7 +62,7 @@ float FloatType::divide(float lhs, float rhs)
 {   
     if(rhs == 0.f)
     {
-        std::cout << "Undefined" << std::endl;
+        std::cout << "warning: dividing float by 0.f" << std::endl;
     }
 
     return lhs / rhs;
@@ -95,7 +95,7 @@ double DoubleType::divide(double lhs, double rhs)
 {
     if(rhs == 0.0)
     {
-        std::cout << "Undefined" << std::endl;
+        std::cout << "warning: dividing double by 0.0" << std::endl;
     }
 
     return lhs / rhs;
@@ -126,13 +126,13 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-   if(rhs == 0)
-   {
-      std::cout << "You tried to divide by 0 " << std::endl;
-      return 0;
-   }
+   	if(rhs == 0)
+   	{
+      	std::cout << "You tried to divide by 0 " << std::endl;
+      	return 0;
+   	}
    
-   return lhs / rhs;
+   	return lhs / rhs;
 }
  
  
