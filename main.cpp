@@ -135,8 +135,7 @@ int IntType::divide(int lhs, int rhs )
    	return lhs / rhs;
 }
  
- 
- 
+
 
 
 int main()
@@ -155,5 +154,5 @@ int main()
     IntType it;
     auto result3 = it.divide(500, 42);  
     std::cout << "result of it.divide(): " << result3 << std::endl;    
-	it.divide(1,2);
+	it.divide(1,6);
 }
