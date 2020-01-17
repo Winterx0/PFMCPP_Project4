@@ -33,7 +33,6 @@
  */
 
 #include <string>
-#include <exception>
 #include <iostream>
 
 /*
@@ -61,18 +60,13 @@ float FloatType::multiply(float lhs, float rhs )
 }
 float FloatType::divide(float lhs, float rhs)
 {   
-    try
+    
+    if(rhs == 0.f)
     {
-        if(rhs == 0.0f)
-        {
-            throw "error";   
-        }
+        std::cout << "exception" << std::endl;
     }
-    catch(const char *fix)
-            {
-                std::cout << "exception" << std::endl << *fix;
-            }
-    return 1; 
+
+    return 0;
 }
  
  /*
@@ -100,18 +94,12 @@ double DoubleType::multiply(double lhs, double rhs )
 }
 double DoubleType::divide(double lhs, double rhs)
 {
-    try
-    {
         if(rhs == 0.0)
         {
-            throw "error";
+            std::cout << "exception" << std::endl;
         }
-    }
-    catch(const char *fix)
-            {
-                std::cout << "exception" << std::endl << *fix;
-            }
-    return 1; 
+
+        return 0;
 }
  
  /*
@@ -139,18 +127,11 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-    try
-    {
         if(rhs == 0)
         {
-            throw "error";
+            std::cout << "exception" << std::endl;
         }
-    }
-    catch(const char *fix)
-            {
-                std::cout << "exception" << std::endl << *fix;
-            }
-    return 1;  
+        return 1;
 }
  
  
