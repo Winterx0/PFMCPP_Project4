@@ -60,13 +60,12 @@ float FloatType::multiply(float lhs, float rhs )
 }
 float FloatType::divide(float lhs, float rhs)
 {   
-    
     if(rhs == 0.f)
     {
-        std::cout << "exception" << std::endl;
+        std::cout << "Undefined" << std::endl;
     }
 
-    return 0;
+    return lhs / rhs;
 }
  
  /*
@@ -94,12 +93,12 @@ double DoubleType::multiply(double lhs, double rhs )
 }
 double DoubleType::divide(double lhs, double rhs)
 {
-        if(rhs == 0.0)
-        {
-            std::cout << "exception" << std::endl;
-        }
+    if(rhs == 0.0)
+    {
+        std::cout << "Undefined" << std::endl;
+    }
 
-        return 0;
+    return lhs / rhs;
 }
  
  /*
@@ -127,11 +126,12 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-        if(rhs == 0)
-        {
-            std::cout << "exception" << std::endl;
-        }
-        return 1;
+    if(rhs == 0) 
+    {
+        std::cout << "Undefined" << std::endl;
+    }
+
+    return 0;
 }
  
  
