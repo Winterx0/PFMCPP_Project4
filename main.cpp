@@ -126,12 +126,13 @@ int IntType::multiply(int lhs, int rhs )
 }
 int IntType::divide(int lhs, int rhs )
 {
-    if(rhs == 0) 
-    {
-        std::cout << "Undefined" << std::endl;
-    }
-
-    return 0;
+   if(rhs == 0)
+   {
+      std::cout << "You tried to divide by 0 " << std::endl;
+      return 0;
+   }
+   
+   return lhs / rhs;
 }
  
  
